@@ -1,0 +1,20 @@
+.container {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+    border: 2px solid red;
+
+    .header {
+        height: 6.25rem;
+    }
+
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        border: 1px solid yellow;
+        scroll-snap-align: start;
+    }
+
+}
