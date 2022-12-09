@@ -1,0 +1,24 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    background: transparent;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+    color: white;
+    background: #0e101d;
+    font-family: Montserrat, sans-serif;
+}
+
+:root{
+    --color-blue: #0A192F;
+    --color-light-blue: #64FFDA;
+    --color-slate: #8892B0;
+    --color-light-slate: #CCD6F6;
+}
