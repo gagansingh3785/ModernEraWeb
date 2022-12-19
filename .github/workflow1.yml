@@ -1,4 +1,5 @@
 name: Test-pipeline
+on: [push]
 jobs:
   echoing:
     runs-on: self-hosted
