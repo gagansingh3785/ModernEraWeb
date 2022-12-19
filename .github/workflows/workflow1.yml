@@ -4,5 +4,5 @@ jobs:
   echoing:
     runs-on: self-hosted
     steps:
-      - echo "hello ${{github.actor}}! running on self hosted runner"
+      - echo "hello running on self hosted runner"
       - echo "success"
