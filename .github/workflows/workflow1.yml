@@ -5,4 +5,5 @@ jobs:
     runs-on: self-hosted
     steps:
       - run: echo "hello ${{ github.actor }} running on self hosted runner"
+      - run: echo "Testing"
       - run: echo "success"
