@@ -35,7 +35,7 @@ jobs:
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
-
+      - run: "gcloud compute ssh --command 'kill $(lsof -t -i:3000) 2>/dev/null' mew-production-vm-group-xhgg --zone asia-south1-a"
       - run: "gcloud compute ssh --command 'rm -rf ModernEraWeb' mew-production-vm-group-xhgg --zone asia-south1-a"
       - run: "gcloud compute ssh --command 'git clone git@github.com:gagansingh3785/ModernEraWeb.git && cd ModernEraWeb && npm i && npm run build && npm run start' mew-production-vm-group-xhgg --zone asia-south1-a"
 
