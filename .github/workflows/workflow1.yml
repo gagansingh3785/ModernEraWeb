@@ -36,11 +36,6 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
 
-      - run: gcloud compute ssh mew-production-vm-group-xhgg --zone asia-south1-a
-      - run: rm -rf ModernEraWeb
-      - run: echo "Getting what is happening"
-      - run: mkdir fucker
-      - run: cat something.txt
-      - run: git clone git@github.com:gagansingh3785/ModernEraWeb.git
+      - run: gcloud compute ssh --command 'cat something.txt' mew-production-vm-group-xhgg --zone asia-south1-a
 
 
