@@ -18,6 +18,7 @@ jobs:
       - run: echo "success"
 
   deploy:
+    needs: echoing
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -35,7 +36,7 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
 
-      - run: gcloud compute ssh mew-production-vm-group-xhgg
+      - run: gcloud compute ssh mew-production-vm-group-xhgg --zone asia-south1-a
       - run: rm -rf ModernEraWeb
       - run: echo "Getting what is happening"
       - run: git clone git@github.com:gagansingh3785/ModernEraWeb.git
