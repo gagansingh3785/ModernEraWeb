@@ -35,7 +35,6 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
 
-      - name: Deploy
       - run: gcloud compute ssh mew-production-vm-group-xhgg
       - run: rm -rf ModernEraWeb
       - run: echo "Getting what is happening"
