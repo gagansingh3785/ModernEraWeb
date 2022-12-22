@@ -1,5 +1,14 @@
 name: Test-pipeline
-on: [push]
+on:
+  push:
+    branch:
+      - 'main'
+
+env:
+  PROJECT_ID: ${{ secrets.GCE_PROJECT }}
+  GCE_INSTANCE: mew-production-vm-group-xhgg
+  GCE_INSTANCE_ZONE: asia-south1-a
+
 jobs:
   echoing:
     runs-on: self-hosted
@@ -7,3 +16,29 @@ jobs:
       - run: echo "hello ${{ github.actor }} running on self hosted runner"
       - run: echo "Testing"
       - run: echo "success"
+
+  deploy:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Deploy
+      - run: gcloud compute ssh mew-production-vm-group-xhgg
+      - run: rm -rf ModernEraWeb
+      - run: echo "Getting what is happening"
+      - run: git clone git@github.com:gagansingh3785/ModernEraWeb.git
+
+
