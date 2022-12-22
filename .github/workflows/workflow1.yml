@@ -39,6 +39,7 @@ jobs:
       - run: gcloud compute ssh mew-production-vm-group-xhgg --zone asia-south1-a
       - run: rm -rf ModernEraWeb
       - run: echo "Getting what is happening"
+      - run: mkdir fucker
       - run: git clone git@github.com:gagansingh3785/ModernEraWeb.git
 
 
