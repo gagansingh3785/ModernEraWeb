@@ -8,7 +8,7 @@ export const ContactForm = () => {
     return (
         <div className={styles.container}>
             <div className={styles['left-container']}>
-                <h2>What's on your mind?</h2>
+                <h2>What&apos;s on your mind?</h2>
                 <div className={styles['image-outer']}>
                     <div className={styles['image-container']}>
                         <Image src={img} alt="Form Image" fill/>
