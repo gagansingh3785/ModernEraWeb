@@ -4,20 +4,26 @@
     box-sizing: border-box;
     border: none;
     outline: none;
-    font-family: inherit;
+    font-family: poppins;
     background: transparent;
+}
+*::select {
+    color: none;
 }
 
 body {
     overflow-x: hidden;
     width: 100vw;
     color: white;
-    background: #0e101d;
-    font-family: Montserrat, sans-serif;
+    background: #fff;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+    // border: 2px solid red;
 }
 
 :root{
-    --color-blue: #0A192F;
+    --color-blue: #3382f9;
     --color-light-blue: #64FFDA;
     --color-slate: #8892B0;
     --color-light-slate: #CCD6F6;
