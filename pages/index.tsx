@@ -4,23 +4,25 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import styles from  "../styles/home.module.scss"
-import { Navbar, Intro, About, Projects, ContactForm, Footer, SocialMediaIcons, Modal } from '../components'
+import { Navbar, Intro, About, Projects, ContactForm, Footer, SocialMediaIcons, Modal, RandomBlobs } from '../components'
 import img from "../public/background.jpg"
+import { IconWave, SvgArray } from '../utils/svg'
+
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
 
   return (
-    <>
+    <div className={styles.container}>
       <Head>
         <title>ModernEraWeb</title>
         <meta name="description" content="Portfolio Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.background}>
-        <Image src={img} alt="background-image" fill/>
+        <RandomBlobs />
       </div>
-      <button onClick={() => setShowModal(true)}>Click me</button>
+      {/* <button onClick={() => setShowModal(true)}>Click me</button> */}
       <Modal show={showModal} />
       <header className={styles.header}>
         <Navbar />
@@ -43,7 +45,7 @@ const Home: NextPage = () => {
       <div className={styles['icons-container']}>
         <SocialMediaIcons />
       </div>
-    </>
+    </div>
   )
 }
 
