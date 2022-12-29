@@ -17,8 +17,23 @@ jobs:
       - run: echo "Testing"
       - run: echo "success"
 
-  deploy:
+  build:
     needs: echoing
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: echo "Starting build process"
+      - run: npm install
+      - run: npm run build
+      - name: Uploading Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: next-build
+          path: ./.next/
+
+  deploy:
+    needs: build
     permissions:
       contents: 'read'
       id-token: 'write'
