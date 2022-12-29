@@ -42,7 +42,7 @@ jobs:
         uses: google-github-actions/upload-cloud-storage@v1
         with:
           path: './artifact/'
-          destination: 'gs://mew-artifacts/artifact_${{ github.GITHUB_SHA }}'
+          destination: 'mew_artifacts/artifact_${{ github.GITHUB_SHA }}'
 
 #  deploy:
 #    needs: build
