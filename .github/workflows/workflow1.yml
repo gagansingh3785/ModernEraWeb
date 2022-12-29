@@ -25,16 +25,17 @@ jobs:
         uses: actions/checkout@v3
       - run: echo "Starting build process"
       - run: echo "Running on version"
-      - run: echo "Hello"
       - run: node --version
       - run: npm --version
       - run: npm install
       - run: npm run build
+      - run: "mkdir artifact && mv package.json artifact/package.json && mv package-lock.json artifact/package-lock.json && mv .next artifact/.next
+      && mv next.config.js artifact/next.config.js"
       - name: Uploading Artifact
         uses: actions/upload-artifact@v3
         with:
           name: next-build
-          path: ./.next/
+          path: ./artifact
 
   deploy:
     needs: build
