@@ -38,12 +38,11 @@ jobs:
       - run: npm run build
       - run: "mkdir artifact && mv package.json artifact/package.json && mv package-lock.json artifact/package-lock.json && mv .next artifact/.next
       && mv next.config.js artifact/next.config.js"
-      - run: echo "sha_short=$(git rev-parse --short HEAD)" >> $COMMIT_SHA
       - name: Uploading Artifact
         uses: google-github-actions/upload-cloud-storage@v1
         with:
           path: './artifact/'
-          destination: 'mew_artifacts/artifact_$COMMIT_SHA'
+          destination: 'mew_artifacts/artifact_$(git rev-parse --short HEAD)'
 
 #  deploy:
 #    needs: build
