@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - run: echo "Starting build process"
+      - run: echo "Running on version"
+      - run: node --version
+      - run: npm --version
       - run: npm install
       - run: npm run build
       - name: Uploading Artifact
