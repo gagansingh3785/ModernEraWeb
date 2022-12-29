@@ -38,11 +38,14 @@ jobs:
       - run: npm run build
       - run: "mkdir artifact && mv package.json artifact/package.json && mv package-lock.json artifact/package-lock.json && mv .next artifact/.next
       && mv next.config.js artifact/next.config.js"
+      - name: set-artifact-name
+        id: artifact-name
+        run: echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
       - name: Uploading Artifact
         uses: google-github-actions/upload-cloud-storage@v1
         with:
           path: './artifact/'
-          destination: 'mew_artifacts/artifact_$(git rev-parse --short HEAD)'
+          destination: 'mew_artifacts/artifact_${{ steps.artifact-name.outputs.short_sha }}'
 
 #  deploy:
 #    needs: build
