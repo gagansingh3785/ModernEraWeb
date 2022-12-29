@@ -3,6 +3,8 @@ import Image from "next/image";
 import styles from "./About.module.scss"
 
 import img from "../../public/pic.jpg"
+import { IconStar } from "../../utils/svg";
+import { RenderStar } from "../RenderStar";
 
 export const About = () => {
     const [slider1Position, setSlider1Position] = useState("left")
@@ -25,7 +27,9 @@ export const About = () => {
                             <div className={`${styles.slide} ${slider1Position === 'right' ? styles['slider-right'] : styles['slider-left']}`} />
                         </div>
                     </div>
-                    <div className={styles.body}></div>
+                    <div className={styles.body}>
+                        <RenderStar type="empty"/>
+                    </div>
                 </div>
             </div>
             <div className={styles.container}>

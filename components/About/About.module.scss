@@ -83,6 +83,10 @@
                 margin-top: 1rem;
                 height: stretch;
                 height: 20rem;
+
+                .starIcon {
+                    background-color: linear-gradient(to right, black 0% ,black 20% ,green 20% ,green 100%);
+                }
             }
         }
     }
