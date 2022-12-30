@@ -47,26 +47,24 @@ jobs:
           path: 'artifact/'
           destination: 'mew_artifacts/artifact_${{ steps.artifact-name.outputs.short_sha }}'
 
-#  deploy:
-#    needs: build
-#    permissions:
-#      contents: 'read'
-#      id-token: 'write'
-#    runs-on: self-hosted
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v3
-#
-#      - id: 'auth'
-#        name: 'Authenticate to Google Cloud'
-#        uses: 'google-github-actions/auth@v1'
-#        with:
-#          credentials_json: '${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}'
-#
-#      - name: Set up Cloud SDK
-#        uses: google-github-actions/setup-gcloud@v1
-#      - run: "gcloud compute ssh --command 'sudo systemctl stop ${{ secrets.START_APP }}' mew-production-vm-group-xhgg --zone asia-south1-a"
-#      - run: "gcloud compute ssh --command 'sudo rm -rf ModernEraWeb' mew-production-vm-group-xhgg --zone asia-south1-a"
-#      - run: "gcloud compute ssh --command 'git clone git@github.com:gagansingh3785/ModernEraWeb.git && sudo systemctl start ${{ secrets.START_APP }}' mew-production-vm-group-xhgg --zone asia-south1-a"
+  deploy:
+    needs: build
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+      - run: "gcloud compute ssh --command 'curl http://storage.googleapis.com/mew_artifacts/artifact_${{ steps.artifact-name.outputs.short_sha }}/ && cd artifact_${{ steps.artifact-name.outputs.short_sha }}' mew-production-vm-group-xhgg --zone asia-south1-a"
 
 
