@@ -36,6 +36,7 @@ jobs:
       - run: npm --version
       - run: npm install
       - run: npm run build
+      - run: whoami
       - run: "mkdir artifact && mv package.json artifact/package.json && mv package-lock.json artifact/package-lock.json && mv .next artifact/.next
       && mv next.config.js artifact/next.config.js"
       - name: set-artifact-name
