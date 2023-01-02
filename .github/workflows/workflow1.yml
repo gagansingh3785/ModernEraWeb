@@ -68,6 +68,7 @@ jobs:
       - name: set-artifact-name
         id: artifact-name
         run: echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - run: "gcloud compute ssh --command 'whoami' mew-production-vm-group-xhgg --zone asia-south1-a"
       - run: "gcloud compute ssh --command 'curl http://storage.googleapis.com/mew_artifacts/artifact_${{ steps.artifact-name.outputs.short_sha }}/ && cd artifact_${{ steps.artifact-name.outputs.short_sha }}' mew-production-vm-group-xhgg --zone asia-south1-a"
 
 
