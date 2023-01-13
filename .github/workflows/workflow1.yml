@@ -70,6 +70,8 @@ jobs:
         id: artifact-name
         run: echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
       - run: "gcloud compute ssh --command 'whoami' mew-production-vm-instance-a-02 --zone us-central1-a"
+      - run: "gcloud compute ssh --command 'sudo systemctl stop start-next-server.service' mew-production-vm-instance-a-02 --zone us-central1-a"
       - run: "gcloud compute ssh --command 'gsutil cp -r gs://mew_artifacts/artifact_${{ steps.artifact-name.outputs.short_sha }}/artifact /home/gagan' mew-production-vm-instance-a-02 --zone us-central1-a"
+      - run: "gcloud compute ssh --command 'sudo systemctl start start-next-server.service' mew-production-vm-instance-a-02 --zone us-central1-a"
 
 
