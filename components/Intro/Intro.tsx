@@ -14,6 +14,7 @@ export const Intro = () => {
                 <h2>We are developers of everyone of ModernEraWeb</h2>
                 <div className={styles.body}>
                     We are software engineers specializing in creating breathtaking digital experiences. We create web applications that are modular, scalable and robust
+                    Hi everyone
                 </div>
             </div>
         </div>
