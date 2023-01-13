@@ -14,7 +14,7 @@ export const About = () => {
         <div className={styles.outer}>
             <div className={styles.container}>
                 <div className={styles.image}>
-                    <Image src={img} alt="Dev's pic" fill style={{"borderRadius": "50%"}}/>
+                    <Image src={img} alt="Dev's pic" fill style={{"borderRadius": "90%"}}/>
                 </div>
                 <div className={styles.content}>
                     <div className={styles.header}>
