@@ -11,7 +11,7 @@ export const Intro = () => {
                 <Image src={img} alt="Tech image" fill quality={100}/>
             </div>
             <div className={styles.content}>
-                <h2>We are developers of everyone of ModernEraWeb Hello from this side :>) :>)</h2>
+                <h2>We are developers of everyone of ModernEraWeb Hello from this side :) :)</h2>
                 <div className={styles.body}>
                     We are software engineers specializing in creating breathtaking digital experiences. We create web applications that are modular, scalable and robust
                     Hi everyone
