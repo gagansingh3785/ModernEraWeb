@@ -54,6 +54,7 @@ jobs:
       contents: 'read'
       id-token: 'write'
     runs-on: self-hosted
+    environment: Production
     steps:
       - name: Checkout
         uses: actions/checkout@v3
