@@ -1,1 +1,0 @@
-export {RenderStar} from "./RenderStar"
