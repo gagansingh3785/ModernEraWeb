@@ -37,7 +37,7 @@ jobs:
       - run: npm --version
       - run: npm install
       - run: npm run build
-      - run: "mkdir artifact && mv package.json artifact/package.json && mv package-lock.json artifact/package-lock.json && mv build artifact/build && mv public artifact/public"
+      - run: "mkdir artifact && mv build artifact/build"
       - name: set-artifact-name
         id: artifact-name
         run: echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
