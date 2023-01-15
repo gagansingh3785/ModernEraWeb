@@ -8,6 +8,7 @@ env:
   PROJECT_ID: ${{ secrets.GCE_PROJECT }}
   GCE_INSTANCE: mew-production-vm-group-xhgg
   GCE_INSTANCE_ZONE: asia-south1-a
+  CI: false
 
 jobs:
   echoing:
