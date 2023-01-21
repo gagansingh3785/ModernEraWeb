@@ -1,5 +1,5 @@
 import React from 'react'
-import "./testimonial.css"
+import "./testimonial.scss"
 import {Data} from "./Data"
 
 import {Swiper, SwiperSlide} from "swiper/react"
