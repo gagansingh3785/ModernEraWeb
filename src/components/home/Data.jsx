@@ -6,11 +6,11 @@ const Data = () => {
     return (
         <div className="home_data">
             <h1 className="home_title">
-                Abhinav Sharma
+                Modern Era Web
                 <img src={img} />
             </h1>
-            <h3 className="home_subtitle">Visual Designer</h3>
-            <p className="home_description">I'm a creative designer based in New York, and I'm very passionate and dedicated to my work.</p>
+            <h3 className="home_subtitle">Web Developers</h3>
+            <p className="home_description">We are developers of Modern Era Web. We specialize in creating robust and user-friendly websites that are tailored to meet the specific needs of our clients.</p>
 
             <a href="#contact" className="button button--flex">
                 Say Hello

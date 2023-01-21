@@ -2,6 +2,10 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     column-gap: 4rem;
+    background-color: var(--container-color);
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    border-radius: 0.75rem;
 
     .about_swiper_container {
         width: 100%;

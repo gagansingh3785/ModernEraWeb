@@ -39,7 +39,7 @@ const Contact = () => {
                     <div className="contact_card">
                         <i className="bx bxl-messenger contact_card-icon"></i>
 
-                        <h3 className="contact_card-title">Messenger</h3>
+                        <h3 className="contact_card-title">LinkedIn</h3>
                         <span className="contact_card-data">user.123</span>
 
                         <a href="" className="contact_button">
