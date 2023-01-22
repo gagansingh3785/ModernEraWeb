@@ -1,9 +1,22 @@
 import React from 'react'
 import "./contact.css"
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
+
+  const notify = (e) => {
+    e.preventDefault()
+    toast.success("Form has been submited successfuly", {
+        position: "top-center"
+    })
+    toast.error("An error occured while submitting the form", {
+        position: "top-center"
+    })
+  }
   return (
     <section className="contact section" id="contact">
+        <ToastContainer />
         <h2 className="section_title">Get in touch</h2>
         <span className="section_subtitle">Contact Me</span>
     
@@ -87,7 +100,7 @@ const Contact = () => {
                         />
                     </div>
 
-                    <button className="button button--flex">
+                    <button className="button button--flex" onClick={notify}>
                         Send Message
                         <svg
                         class="button__icon"
