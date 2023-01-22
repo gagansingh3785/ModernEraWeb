@@ -8,6 +8,7 @@ import Testimonials from './components/testimonials/Testimonials';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import Scrollup from './components/scrollup/Scrollup';
+import Portfolio from './components/portofolio/Portfolio';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <main className='main'>
         <Home />
         <About />
+        <Portfolio />
         <Services />
         <Testimonials />
         <Contact />
