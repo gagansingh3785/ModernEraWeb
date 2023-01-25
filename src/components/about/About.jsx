@@ -1,13 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import "./About.scss"
 import AboutImg from "../../assets/about.jpg"
 import CV from "../../assets/John-Cv.pdf"
 import Info from "./Info";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import { useEffect } from "react";
 
 const About = () => {
+    const [currentSlider1, toggleSlider1] = useState("0")
+    const [currentSlider2, toggleSlider2] = useState("0")
     const aboutHeadings = ["About", "Skills"]
+
+    useEffect(() => {
+        const elements = document.querySelectorAll(".about_container_pagination")
+        for (let i=0; i<2; i++) {
+            elements[i].addEventListener("click", changeslider1)
+        }
+        for (let i=2; i<4; i++) {
+            elements[i].addEventListener("click", changeslider2)
+        }
+    }, [])
+
+    function changeslider1(e){
+        toggleSlider1(e.target.id)
+    }
+
+    function changeslider2(e){
+        toggleSlider2(e.target.id)
+    }
+
     return (
         <section className="about section" id="about">
             <h2 className="section_title">About Us</h2>
@@ -53,15 +75,23 @@ const About = () => {
                     slidesPerView={1}
                     grabCursor={true}
                     pagination = {{
-                        el: ".about_customer_pagination",
+                        el: ".inner_container",
                         clickable: true,
                         renderBullet: (index, classname) => {
-                            return `<span class="${classname} about_container_pagination">${aboutHeadings[index]}</span>`
+                            return `<span class="${classname} about_container_pagination" id=${index}>${aboutHeadings[index]}</span>`
                         }
                     }}
                     modules={[Pagination]}
                 >
-                    <div className="about_customer_pagination"></div>
+                    <div className="about_custom_pagination">
+                        <div className="outer_container">
+                            <div className="inner_container"></div>
+                            <div className="slider_container">
+                                <hr width="100%" height="0.2rem"/>
+                                <div className={currentSlider1 === "1" ? "slider slider-right" : "slider"} />
+                            </div>
+                        </div>
+                    </div>
                     <SwiperSlide width="100%">
                         <>
                             <Info />
@@ -201,15 +231,23 @@ const About = () => {
                     slidesPerView={1}
                     grabCursor={true}
                     pagination = {{
-                        el: ".about_customer_pagination",
+                        el: ".inner_container",
                         clickable: true,
                         renderBullet: (index, classname) => {
-                            return `<span class="${classname} about_container_pagination">${aboutHeadings[index]}</span>`
-                        }
+                            return `<span class="${classname} about_container_pagination" id=${index}>${aboutHeadings[index]}</span>`
+                        },
                     }}
                     modules={[Pagination]}
                 >
-                    <div className="about_customer_pagination"></div>
+                    <div className="about_custom_pagination">
+                        <div className="outer_container">
+                            <div className="inner_container"></div>
+                            <div className="slider_container">
+                                <hr width="100%" height="0.2rem"/>
+                                <div className={currentSlider2 === "1" ? "slider slider-right" : "slider"} />
+                            </div>
+                        </div>
+                    </div>
                     <SwiperSlide width="100%">
                         <>
                             <Info />

@@ -59,6 +59,10 @@
     }
 
     .swiper-pagination-bullet {
+        width: auto;
+        text-align: center;
+        height: 90%;
+        border-radius: 0;
         color: var(--title-color);
         font-size: var(--h3-font-size);
         opacity: 1;
@@ -67,12 +71,50 @@
     .swiper-pagination-bullet-active {
         color: var(--title-color-dark)
     }
-    .about_customer_pagination {
+    .about_custom_pagination {
         display: flex;
         justify-content: space-evenly;
         width: 100%;
-        height: 2rem;
+        height: 2.5rem;
+
+        .outer_container {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+
+            .inner_container {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .slider_container {
+                position: relative;
+
+                .slider {
+                    width: 4.5rem;
+                    height: 0.3rem;
+                    background-color: var(--title-color);
+                    position: absolute;
+                    top: -0.1rem;
+                    left: 0;
+                    transition: all 0.2s linear;
+
+                    &.slider-right {
+                        width: 3.5rem;
+                        left: calc(100% - 3.5rem);
+                    }
+                }
+            }
+        }
     }
+
+    .inner_container
+        {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 1.8rem;
+        }
     
 }
 
