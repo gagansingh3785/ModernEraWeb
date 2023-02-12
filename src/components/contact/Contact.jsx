@@ -1,18 +1,31 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import "./contact.css"
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import API_MANAGER from '../../api';
 
 const Contact = () => {
 
-  const notify = (e) => {
+  const formRef = useRef(null)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    toast.success("Form has been submited successfuly", {
-        position: "top-center"
-    })
-    toast.error("An error occured while submitting the form", {
-        position: "top-center"
-    })
+    const formData = new FormData(formRef?.current)
+    const parsedData = {}
+    for (const pair of formData.entries()) {
+        parsedData[pair[0]] = pair[1]
+    }
+    try {
+        const response = await API_MANAGER.sendMessage(parsedData)
+        toast.success("Form has been submited successfuly", {
+            position: "top-center"
+        })
+    }
+    catch (err) {
+        toast.error("An error occured while submitting the form", {
+            position: "top-center"
+        })
+    }
   }
   return (
     <section className="contact section" id="contact">
@@ -66,7 +79,11 @@ const Contact = () => {
             <div className="contact_content">
                 <h3 className="contact_title">Write me your project</h3>
             
-                <form className="contact_form">
+                <form 
+                    className="contact_form"
+                    onSubmit={handleSubmit}
+                    ref={formRef}
+                >
                     <div className="contact_form-div">
                         <label className="contact_form-tag">Name</label>
                         <input 
@@ -92,7 +109,7 @@ const Contact = () => {
                     <div className="contact_form-div contact_form-area">
                         <label className="contact_form-tag">Project</label>
                         <textarea
-                            name='project'
+                            name='message'
                             cols="30"
                             rows="10"
                             className='contact_form-input'
@@ -100,7 +117,7 @@ const Contact = () => {
                         />
                     </div>
 
-                    <button className="button button--flex" onClick={notify}>
+                    <button className="button button--flex" type='submit'>
                         Send Message
                         <svg
                         class="button__icon"
