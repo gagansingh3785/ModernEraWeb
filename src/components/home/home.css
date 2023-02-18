@@ -74,6 +74,7 @@
 .home_logo_container {
     order: 1;
     justify-self: center;
+    font-size: 1.5rem;
 }
 
 .home_logo span {
@@ -236,6 +237,12 @@
 
     .home_scroll {
         display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .home_logo_container {
+        font-size: 1rem;
     }
 }
 

@@ -9,6 +9,16 @@
     background-color: var(--container-color);
     border-radius: 0.75rem;
     padding: 1rem;
+}
+
+.category_heading {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--title-color);
+    font-size: 1.25rem;
+}
+
+.category_content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 1rem;
@@ -147,7 +157,7 @@
 }
   
 @media screen and (max-width: 576px){
-    .category_container {
+    .category_content {
         grid-template-columns: 1fr;
     }
     .services_modal-content {

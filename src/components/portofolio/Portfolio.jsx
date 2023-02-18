@@ -10,15 +10,15 @@ const Portfolio = () => {
         <span className="section_subtitle">Most recent work</span>
 
         <div className="portfolio_container container grid">
-            <div className='filters_container'>
+            {/* <div className='filters_container'>
                 <div className='filter filter_selected'>All</div>
                 <div className='filter'>Web</div>
                 <div className='filter'>App</div>
                 <div className='filter'>Design</div>
-            </div>
+            </div> */}
             <div className='projects_container'>
                 <div className='project'>
-                    <img src={img} alt="project image" className='project_image'/>
+                    <img src={img} alt="project" className='project_image'/>
                     <div className='project_heading'>Web Design</div>
                     <span className="services_button">
                         Demo
@@ -26,7 +26,7 @@ const Portfolio = () => {
                     </span>
                 </div>
                 <div className='project'>
-                    <img src={img} alt="project image" className='project_image'/>
+                    <img src={img} alt="project" className='project_image'/>
                     <div className='project_heading'>Web Design</div>
                     <span className="services_button">
                         Demo
@@ -34,7 +34,7 @@ const Portfolio = () => {
                     </span>
                 </div>
                 <div className='project'>
-                    <img src={img} alt="project image" className='project_image'/>
+                    <img src={img} alt="project" className='project_image'/>
                     <div className='project_heading'>Web Design</div>
                     <span className="services_button">
                         Demo
@@ -42,7 +42,7 @@ const Portfolio = () => {
                     </span>
                 </div>
                 <div className='project'>
-                    <img src={img} alt="project image" className='project_image'/>
+                    <img src={img} alt="project" className='project_image'/>
                     <div className='project_heading'>Web Design</div>
                     <span className="services_button">
                         Demo
