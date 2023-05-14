@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./About.scss"
-import AboutImg from "../../assets/about.jpg"
+import GaganImg from "../../assets/Gagan.jpg"
+import AbhinavImg from "../../assets/Abhinav.jpeg"
 import CV from "../../assets/John-Cv.pdf"
 import Info from "./Info";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -37,7 +38,7 @@ const About = () => {
         
             <div className="about_container container grid">
                 <div style={{position: "relative", display: "flex", justifyContent: "center"}}>
-                    <img src={AboutImg} alt="" className="about_img" />
+                    <img src={GaganImg} alt="" className="about_img" style={{grayScale: "1"}}/>
                     <a download="" href={CV} className="button button--flex" style={{position: "absolute", bottom: "1rem", left:"50%" , transform: "translateX(-50%)"}}>
                             Gaganpreet Singh
                     </a>
@@ -140,7 +141,7 @@ const About = () => {
 
             <div className="about_container container grid" style={{marginTop: "5rem"}}>
                 <div style={{position: "relative", display: "flex", justifyContent: "center"}}>
-                    <img src={AboutImg} alt="" className="about_img" />
+                    <img src={AbhinavImg} alt="" className="about_img" />
                     <a download="" href={CV} className="button button--flex" style={{position: "absolute", bottom: "1rem", left:"50%" , transform: "translateX(-50%)"}}>
                             Abhinav Sharma
                     </a>
