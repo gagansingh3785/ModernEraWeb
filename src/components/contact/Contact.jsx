@@ -17,7 +17,8 @@ const Contact = () => {
     }
     try {
         const response = await API_MANAGER.sendMessage(parsedData)
-        toast.success("Form has been submited successfuly", {
+        const responseMessage = response?.data?.message ?? "Form has been submitted successfully"
+        toast.success(responseMessage, {
             position: "top-center"
         })
     }
@@ -42,7 +43,7 @@ const Contact = () => {
                         <i className="bx bx-mail-send contact_card-icon"></i>
 
                         <h3 className="contact_card-title">Email</h3>
-                        <span className="contact_card-data">user@gmail.com</span>
+                        <span className="contact_card-data">team@moderneraweb.com</span>
 
                         <a href="mailto:examplemail@gmail.com" className="contact_button">
                             Write me{" "}
@@ -54,25 +55,25 @@ const Contact = () => {
                         <i className="bx bxl-whatsapp contact_card-icon"></i>
 
                         <h3 className="contact_card-title">Whatsapp</h3>
-                        <span className="contact_card-data">9998887770</span>
+                        <span className="contact_card-data">+91-8447744326</span>
 
-                        <a href="" className="contact_button">
+                        <a href="https://wa.me/8447744326" className="contact_button">
                             Write me
                             <i className="bx bx-right-arrow-alt contact_button-icon"></i>
                         </a>
                     </div>
 
-                    <div className="contact_card">
-                        <i className="bx bxl-messenger contact_card-icon"></i>
+                    {/*<div className="contact_card">*/}
+                    {/*    <i className="bx bxl-messenger contact_card-icon"></i>*/}
 
-                        <h3 className="contact_card-title">LinkedIn</h3>
-                        <span className="contact_card-data">user.123</span>
+                    {/*    <h3 className="contact_card-title">LinkedIn</h3>*/}
+                    {/*    <span className="contact_card-data">user.123</span>*/}
 
-                        <a href="" className="contact_button">
-                            Write me
-                            <i className="bx bx-right-arrow-alt contact_button-icon"></i>
-                        </a>
-                    </div>
+                    {/*    <a href="" className="contact_button">*/}
+                    {/*        Write me*/}
+                    {/*        <i className="bx bx-right-arrow-alt contact_button-icon"></i>*/}
+                    {/*    </a>*/}
+                    {/*</div>*/}
                 </div>
             </div>
 
@@ -90,7 +91,7 @@ const Contact = () => {
                             type="text" 
                             name='name' 
                             className='contact_form-input'
-                            placeholder='insert your name'
+                            placeholder='Insert your name'
                         />
 
                     </div>
@@ -101,7 +102,7 @@ const Contact = () => {
                             type="email" 
                             name='email' 
                             className='contact_form-input'
-                            placeholder='insert your email'
+                            placeholder='Insert your email'
                         />
 
                     </div>
@@ -109,7 +110,7 @@ const Contact = () => {
                     <div className="contact_form-div contact_form-area">
                         <label className="contact_form-tag">Project</label>
                         <textarea
-                            name='message'
+                            name="project"
                             cols="30"
                             rows="10"
                             className='contact_form-input'

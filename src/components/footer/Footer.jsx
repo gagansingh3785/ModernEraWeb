@@ -25,7 +25,7 @@ const Footer = () => {
                 <a href="" className="footer_social-link" target="_blank">
                     <i className="bx bxl-facebook"></i>
                 </a>
-                <a href="" className="footer_social-link" target="_blank">
+                <a href="https://www.instagram.com/modern_era_devs/" className="footer_social-link" target="_blank">
                     <i className="bx bxl-instagram"></i>
                 </a>
                 <a href="" className="footer_social-link" target="_blank">
@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
 
             <span className="footer_copy">
-                &#169; Crypticalcoder. All rights reserved
+                &#169; ModernEraWeb. All rights reserved
             </span>
         </div>
     </footer>

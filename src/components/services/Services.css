@@ -157,6 +157,9 @@
 }
   
 @media screen and (max-width: 576px){
+    .services_container {
+        grid-template-columns: 1fr;
+    }
     .category_content {
         grid-template-columns: 1fr;
     }

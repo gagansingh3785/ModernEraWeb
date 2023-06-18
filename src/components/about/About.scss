@@ -124,6 +124,13 @@
     .about_container {
         grid-template-columns: 1fr;
         row-gap: 2.5rem;
+        padding: 1rem;
+
+        .about_description {
+            padding: 0 5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
     }
 
     .about_img {
@@ -141,20 +148,17 @@
     .about_info {
         justify-content: center;
     }
-
-    .about_description {
-        padding: 0 5rem;
-        margin-bottom: 2rem;
-    }
 }
 
 @media screen and (max-width: 576px) {
-    .about_info {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .about_container {
+        .about_info {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
-    .about_description {
-        padding: 0;
+        .about_description {
+            padding: 0;
+        }
     }
 }
 
