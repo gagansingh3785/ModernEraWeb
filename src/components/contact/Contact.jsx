@@ -45,7 +45,7 @@ const Contact = () => {
                         <h3 className="contact_card-title">Email</h3>
                         <span className="contact_card-data">team@moderneraweb.com</span>
 
-                        <a href="mailto:examplemail@gmail.com" className="contact_button">
+                        <a href="mailto:team@moderneraweb.com" className="contact_button">
                             Write me{" "}
                             <i className="bx bx-right-arrow-alt contact_button-icon"></i>
                         </a>
