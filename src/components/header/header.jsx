@@ -29,15 +29,15 @@ const Header = () => {
                             </a>
                         </li>
 
-                        <li className="nav_item">
-                            <a 
-                                href="#skills" 
-                                onClick={() => setActiveNav("#skills")} 
-                                className={activeNav === "#skills" ? "nav_link active-link" : "nav_link"}
-                            >
-                                <i className="uil uil-file-alt nav_icon"></i> Skills
-                            </a>
-                        </li>
+                        {/*<li className="nav_item">*/}
+                        {/*    <a */}
+                        {/*        href="#skills" */}
+                        {/*        onClick={() => setActiveNav("#skills")} */}
+                        {/*        className={activeNav === "#skills" ? "nav_link active-link" : "nav_link"}*/}
+                        {/*    >*/}
+                        {/*        <i className="uil uil-file-alt nav_icon"></i> Skills*/}
+                        {/*    </a>*/}
+                        {/*</li>*/}
 
                         <li className="nav_item">
                             <a 
@@ -56,6 +56,16 @@ const Header = () => {
                                 className={activeNav === "#portfolio" ? "nav_link active-link" : "nav_link"}
                             >
                                 <i className="uil uil-scenery nav_icon"></i> Portfolio
+                            </a>
+                        </li>
+
+                        <li className="nav_item">
+                            <a
+                                href="#prices"
+                                onClick={() => setActiveNav("#prices")}
+                                className={activeNav === "#prices" ? "nav_link active-link" : "nav_link"}
+                            >
+                                <i className="uil uil-scenery nav_icon"></i> Prices
                             </a>
                         </li>
 

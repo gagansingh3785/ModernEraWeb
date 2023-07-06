@@ -9,6 +9,7 @@ import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import Scrollup from './components/scrollup/Scrollup';
 import Portfolio from './components/portofolio/Portfolio';
+import Pricing from "./components/Pricing/Pricing";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Services />
         <Testimonials />
         <Contact />
+        <Pricing />
       </main>
       <Footer />
       <Scrollup />
