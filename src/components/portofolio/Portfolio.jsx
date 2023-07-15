@@ -21,8 +21,8 @@ const Portfolio = () => {
             <div className='projects_container'>
                 <div className='project'>
                     <img src={TenzinNutritionImg} alt="project" className='project_image'/>
-                    <div className='project_heading'>Web Design</div>
-                    <a target={"_blank"} href={"http://moderneraweb.com/:8081/"}>
+                    <div className='project_heading'>Tenzin Nutrition</div>
+                    <a target={"_blank"} href={"http://moderneraweb.com:8081/"}>
                         <span className="services_button">
                             Demo
                             <i className='uil uil-arrow-right services_button-icon'></i>
@@ -40,7 +40,7 @@ const Portfolio = () => {
                 <div className='project'>
                     <img src={TheHoursImg} alt="project" className='project_image'/>
                     <div className='project_heading'>The Hours</div>
-                    <a target={"_blank"} href={"http://moderneraweb.com/:8080/"}>
+                    <a target={"_blank"} href={"http://moderneraweb.com:8080/"}>
                         <span className="services_button">
                             Demo
                             <i className='uil uil-arrow-right services_button-icon'></i>
@@ -50,7 +50,7 @@ const Portfolio = () => {
                 <div className='project'>
                     <img src={FitLifeImg} alt="project" className='project_image'/>
                     <div className='project_heading'>Fit Life</div>
-                    <a target={"_blank"} href={"http://moderneraweb.com/:3000/"}>
+                    <a target={"_blank"} href={"http://moderneraweb.com:3000/"}>
                         <span className="services_button">
                             Demo
                             <i className='uil uil-arrow-right services_button-icon'></i>
